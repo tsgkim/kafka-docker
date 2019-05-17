@@ -136,7 +136,7 @@ echo "" >> "$KAFKA_HOME/config/server.properties"
         fi
 
         if [[ $env_var =~ ^LOG4J_ ]]; then
-            log4j_name=$(echo "$env_var" | tr '[:upper:]' '[:lower:]' | tr _ .)
+            log4j_name=$(echo "$env_var" | tr _ .)
             updateConfig "$log4j_name" "${!env_var}" "$KAFKA_HOME/config/log4j.properties"
         fi
     done
